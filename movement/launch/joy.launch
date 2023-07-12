@@ -1,0 +1,9 @@
+<launch>
+    <!-- 设置/dev/input/js0作为joy_node的设备参数 -->
+    <arg name="device" default="/dev/input/js0" />
+    <param name="joy_node/dev" value="$(arg device)" />
+
+    <!-- 启动joy_node节点 -->
+    <node pkg="joy" type="joy_node" name="joy_node" output="screen" />
+    <node name="joy2cmd" pkg="movement" type="joy2cmd.py" output="screen" />
+</launch>

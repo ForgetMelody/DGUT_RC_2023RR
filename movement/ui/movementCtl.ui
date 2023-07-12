@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>600</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>移动控制</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>0</y>
+      <width>601</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="tabPosition">
+     <enum>QTabWidget::North</enum>
+    </property>
+    <property name="tabShape">
+     <enum>QTabWidget::Rounded</enum>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="elideMode">
+     <enum>Qt::ElideLeft</enum>
+    </property>
+    <property name="movable">
+     <bool>false</bool>
+    </property>
+    <property name="tabBarAutoHide">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="speed_tab">
+     <property name="statusTip">
+      <string/>
+     </property>
+     <attribute name="title">
+      <string>速度环</string>
+     </attribute>
+     <widget class="QSlider" name="angularSlider">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>10</y>
+        <width>300</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>-3174</number>
+      </property>
+      <property name="maximum">
+       <number>3174</number>
+      </property>
+      <property name="singleStep">
+       <number>10</number>
+      </property>
+      <property name="pageStep">
+       <number>10</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="invertedAppearance">
+       <bool>false</bool>
+      </property>
+      <property name="tickPosition">
+       <enum>QSlider::NoTicks</enum>
+      </property>
+     </widget>
+     <widget class="QSlider" name="linearSlider">
+      <property name="geometry">
+       <rect>
+        <x>285</x>
+        <y>50</y>
+        <width>30</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>-1195</number>
+      </property>
+      <property name="maximum">
+       <number>1195</number>
+      </property>
+      <property name="singleStep">
+       <number>10</number>
+      </property>
+      <property name="pageStep">
+       <number>10</number>
+      </property>
+      <property name="sliderPosition">
+       <number>0</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="invertedAppearance">
+       <bool>false</bool>
+      </property>
+      <property name="invertedControls">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="angularLabel">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>5</y>
+        <width>71</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>转向速度:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="linearLabel">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>135</y>
+        <width>71</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>前后速度:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="stopButton">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>200</y>
+        <width>100</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>急停</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="angularEdit">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>10</y>
+        <width>90</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <double>-3174.500000000000000</double>
+      </property>
+      <property name="maximum">
+       <double>3174.500000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.500000000000000</double>
+      </property>
+      <property name="stepType">
+       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="linearEdit">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>135</y>
+        <width>90</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <double>-11.949999999999999</double>
+      </property>
+      <property name="maximum">
+       <double>11.949999999999999</double>
+      </property>
+      <property name="singleStep">
+       <double>0.500000000000000</double>
+      </property>
+      <property name="stepType">
+       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="position_tab">
+     <attribute name="title">
+      <string>位置环</string>
+     </attribute>
+     <widget class="QLabel" name="Label1">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>230</y>
+        <width>501</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>注:位置环设置为只能单独进行前后移动或者转向，不可同时进行</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="moveLabel">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>50</y>
+        <width>81</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>前后移动:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="turnLabel">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>120</y>
+        <width>81</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>左右旋转:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="publishButton">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>50</y>
+        <width>200</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>发布指令</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="moveEdit">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>50</y>
+        <width>240</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <double>-99999.990000000005239</double>
+      </property>
+      <property name="maximum">
+       <double>99999.990000000005239</double>
+      </property>
+      <property name="singleStep">
+       <double>0.100000000000000</double>
+      </property>
+      <property name="stepType">
+       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="turnEdit">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>120</y>
+        <width>240</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <double>-99999.990000000005239</double>
+      </property>
+      <property name="maximum">
+       <double>99999.990000000005239</double>
+      </property>
+      <property name="singleStep">
+       <double>0.100000000000000</double>
+      </property>
+      <property name="stepType">
+       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="lreflactBox">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>290</y>
+      <width>290</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>左电机</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+    <widget class="QLabel" name="lrpmLabel">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>41</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>RPM:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lrangeLabel">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>30</y>
+       <width>51</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>里程计:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lrpmValLabel">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>30</y>
+       <width>81</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lrangeValLabel">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>30</y>
+       <width>71</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="rreflactBox">
+    <property name="geometry">
+     <rect>
+      <x>305</x>
+      <y>290</y>
+      <width>290</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>右电机</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <widget class="QLabel" name="rrpmLabel">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>41</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>RPM:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="rrangeLabel">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>30</y>
+       <width>51</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>里程计:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="rrpmValLabel">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>30</y>
+       <width>81</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="rrangeValLabel">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>30</y>
+       <width>71</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+ <slots>
+  <slot>slider2edit()</slot>
+  <slot>edit2slider()</slot>
+  <slot>pubStop()</slot>
+  <slot>posEditChange()</slot>
+  <slot>pubPos()</slot>
+ </slots>
+</ui>

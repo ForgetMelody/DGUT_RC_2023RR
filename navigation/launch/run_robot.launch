@@ -1,0 +1,11 @@
+<launch>
+    <include file="$(find navigation)/launch/navigation.launch"/>
+    <include file="$(find movement)/launch/run_omni.launch"/>
+
+    <!-- selfaim -->
+    <node pkg="selfaim" type="custompoint2scan.py" name="custompoint2scan_node"/>
+    <!-- 任务流程 -->
+    <!-- <node name="mission" pkg="navigation" type="mission.py"/> -->
+    <!-- 记录 -->
+    <!-- <node name="logger" pkg="movement" type="logger.py"/> -->
+</launch>

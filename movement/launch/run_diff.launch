@@ -1,0 +1,16 @@
+<launch>
+    <!-- 定义 input 参数 -->
+    <arg name="enable_joy" default="false"/>
+
+    <!-- 如果 enable_joy 参数为 true，则启动 joy.launch 文件 -->
+    <group if="$(arg enable_joy)">
+        <include file="$(find movement)/launch/joy.launch"/>
+        <node name="joy2cmd" pkg="movement" type="joy2cmd.py"/>
+    </group>
+
+    <!-- 启动 connect.py 节点 -->
+    <node name="connect" pkg="serial_pkgs" type="connect.py"/>
+
+    <!-- 启动 movement.py 节点 -->
+    <node name="rr_diff" pkg="movement" type="rr_diff.py"/>
+</launch>

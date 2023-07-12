@@ -1,0 +1,6 @@
+<launch>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find custompoint2Pointcloud)/rviz/rviz.rviz" />
+  <node pkg="custompoint2Pointcloud" type="custompoint2scan.py" name="custompoint2scan_node" output="screen" />
+
+</launch>

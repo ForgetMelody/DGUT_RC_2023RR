@@ -1,0 +1,19 @@
+<launch>
+    <!-- 定义 input 参数 -->
+    <arg name="enable_joy" default="true"/>
+
+    <!-- 如果 enable_joy 参数为 true，则启动 joy.launch 文件 -->
+    <group if="$(arg enable_joy)">
+        <include file="$(find movement)/launch/joy.launch"/>
+
+    </group>
+
+    <!-- 启动 connect.py 节点 -->
+    <node name="connect" pkg="serial_pkgs" type="connect.py" output="screen"/>
+
+    <!-- 启动 rr_omni.py 节点 -->
+    <node name="rr_omni" pkg="movement" type="rr_omni.py" output="screen"/>
+    <node name="climb" pkg="movement" type="climb.py" output="screen"/>
+    <!-- pid调整偏航的算法-->
+    <node name="controller" pkg="movement" type="controller.py" output="screen"/>
+</launch>
